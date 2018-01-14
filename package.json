@@ -1,0 +1,113 @@
+{
+  "name": "cryptoball-client",
+
+  "description": "JS Library for interacting with CryptoBall Smart Contract",
+  "version": "1.0.0",
+  "author":
+    "CryptoBall <thecryptoball@protonmail.com> (https://cryptoball.tech)",
+  "bugs": {
+    "url": "https://github.com/CryptoBall/js-client/issues",
+    "email": "thecryptoball@protonmail.com"
+  },
+  "contributors": [
+    "CryptoBall <thecryptoball@protonmail.com> (https://cryptoball.tech)"
+  ],
+  "dependencies": {},
+  "ava": {
+    "failFast": true,
+    "verbose": true
+  },
+  "devDependencies": {
+    "auto-bind": "^1.1.0",
+    "ava": "^0.22.0",
+    "codecov": "^2.3.0",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.5.0",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-prettier": "latest",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "nyc": "^11.1.0",
+    "prettier": "^1.6.1",
+    "xo": "latest"
+  },
+  "engines": {
+    "node": ">=8.3"
+  },
+  "homepage": "https://github.com/CryptoBall/js-client",
+  "keywords": [
+    "CryptoBall",
+    "JS",
+    "Web3",
+    "ETH",
+    "Ethereum",
+    "Smart",
+    "Contracts"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
+      "prettier --write --single-quote --trailing-comma es5 --no-semi",
+      "git add"
+    ]
+  },
+  "main": "index.js",
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100,
+    "reporter": ["lcov", "html", "text"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CryptoBall/js-client"
+  },
+
+  "xo": {
+    "extends": "prettier",
+    "plugins": ["prettier"],
+    "parserOptions": {
+      "sourceType": "script"
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "bracketSpacing": true,
+          "trailingComma": "es5",
+          "semi": false
+        }
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 80,
+          "ignoreUrls": true
+        }
+      ],
+      "capitalized-comments": "off",
+      "camelcase": "off",
+      "no-warning-comments": "off"
+    },
+    "space": true
+  },
+
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+
+    "lint": "xo",
+
+    "precommit": "lint-staged && npm test",
+    "test": "npm run lint && npm run test-coverage",
+    "test-coverage": "cross-env NODE_ENV=test nyc ava"
+  },
+
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "es5",
+    "semi": false
+  }
+}
