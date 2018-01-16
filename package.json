@@ -2,7 +2,7 @@
   "name": "cryptoball-client",
 
   "description": "JS Library for interacting with CryptoBall Smart Contract",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author":
     "CryptoBall <thecryptoball@protonmail.com> (https://cryptoball.tech)",
   "bugs": {
