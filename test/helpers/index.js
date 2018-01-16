@@ -1,8 +1,8 @@
-const Script = require('../..')
+const Client = require('../..')
 
 function beforeEach(t) {
-  const script = new Script({})
-  Object.assign(t.context, { script })
+  const client = new Client({})
+  Object.assign(t.context, { client })
 }
 
 function afterEach() {}
